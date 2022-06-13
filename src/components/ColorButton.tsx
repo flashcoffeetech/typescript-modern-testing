@@ -1,8 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
 
 const ColorButton = () => {
-  const [buttonColor, setButtonColor] = React.useState<string>('red');
-  const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
+  const [buttonColor, setButtonColor] = React.useState<string>("red");
+  const newButtonColor = buttonColor === "red" ? "blue" : "red";
   const onClick = () => {
     setButtonColor(newButtonColor);
   };

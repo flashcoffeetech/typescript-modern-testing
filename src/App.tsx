@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import './App.css';
-import Header from './components/Header';
+import { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
 
 interface Post {
   id: number;
@@ -11,20 +11,20 @@ interface Post {
 function App() {
   const [posts, setPosts] = useState<Array<Post>>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const fetchPosts = async () => {
     setLoading(true);
-    setErrorMessage('');
+    setErrorMessage("");
     setPosts([]);
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-    console.log('SAMPLE MSW DATA 2', response);
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    console.log("SAMPLE MSW DATA 2", response);
     if (response.ok) {
       const json = await response.json();
-      console.log('SAMPLE MSW DATA', json);
+      console.log("SAMPLE MSW DATA", json);
       setPosts(json);
       setLoading(false);
-      setErrorMessage('');
+      setErrorMessage("");
     } else {
       setErrorMessage(response.statusText);
       setLoading(false);
