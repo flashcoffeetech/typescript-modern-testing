@@ -21,6 +21,7 @@ test("When clicking on the fetch posts button it should list out the posts", asy
   const heading = screen.getAllByRole("heading", {
     level: 3,
   });
+  console.log("Test2");
   expect(heading[0]).toBeInTheDocument();
 });
 
