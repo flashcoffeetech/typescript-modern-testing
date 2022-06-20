@@ -21,7 +21,6 @@ test("When clicking on the fetch posts button it should list out the posts", asy
   const heading = screen.getAllByRole("heading", {
     level: 3,
   });
-  console.log("Test2");
   expect(heading[0]).toBeInTheDocument();
 });
 
@@ -36,12 +35,12 @@ test("When clicking on the clear posts button it should clear the posts.", async
 test("Display error message when fetch posts data failed", async () => {
   server.use(...errorHandlers);
   render(<App />);
-  screen.debug();
+  // screen.debug();
   expect(screen.getByText(/Modern React Testing/i)).toBeInTheDocument();
   await user.click(screen.getByRole("button", { name: "Fetch Posts" }));
-  screen.debug();
+  // screen.debug();
   await waitForElementToBeRemoved(() => screen.queryByLabelText("loading"));
-  screen.debug();
+  // screen.debug();
   expect(screen.getByText(/Internal Server Error/i)).toBeInTheDocument();
 });
 
